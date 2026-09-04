@@ -20,30 +20,46 @@ I have hands-on experience working with SQL, Excel, Python, Pandas, and Power BI
 
 ## 📁 Projects
 
-### 1. Sales Analysis
-Analyzed sales data to identify revenue trends, product performance, and important business insights.
+### 1. Sales Performance Analysis
+
+Analyzed sales data to identify revenue trends, product performance, category performance, and monthly sales patterns.
 
 **Tools:** Python, Pandas, Excel, Power BI
 
+![Sales Performance Dashboard](sales%20performance%20analysis.png)
+
 ### 2. Customer Analysis
-Analyzed customer demographics, purchasing behavior, spending patterns, and high-value customers.
+
+Analyzed customer demographics, purchasing behavior, spending patterns, and high-value customers to identify useful business insights.
 
 **Tools:** Python, Pandas, Excel
 
-### 3. Employee / HR Analysis
-Analyzed employee-related data to understand workforce patterns, employee performance, and HR insights.
+![Customer Analysis Dashboard](customer%20analysis%20dashboard.png)
+
+### 3. Sales Data Analysis
+
+Performed exploratory analysis of sales data to understand sales trends, revenue, and product performance.
 
 **Tools:** Python, Pandas, Excel, Power BI
 
-### 4. E-commerce / Supermarket Analysis
-Analyzed transaction data to identify sales patterns, product performance, customer behavior, and revenue insights.
+![Sales Data Analysis](sales%20data.png)
 
-**Tools:** Python, Pandas, Excel, Power BI
+### 4. Sales and Profit Analysis
+
+Built an interactive Power BI dashboard to analyze sales, profit, products, and business performance.
+
+**Tools:** Power BI, Excel
+
+![Sales and Profit Analysis Dashboard](sales%20and%20profit%20analysis%20dashboard.png)
 
 ### 5. Customer Churn Analysis
-Analyzed customer data to identify churn patterns and factors affecting customer retention.
+
+Analyzed customer data to identify churn patterns and understand factors affecting customer retention.
 
 **Tools:** Python, Pandas, Excel, Power BI
+
+![Customer Churn Analysis](CUSTOMER%20CHURN.png)
+
 
 ## 📜 Certifications
 
