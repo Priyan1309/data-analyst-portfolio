@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priyadharshan — Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;0,900;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF9FF;
+    --panel:#FFFFFF;
+    --ink:#1A1730;
+    --muted:#6B6584;
+    --line:#E9E4F7;
+
+    --violet:#7C5CFC;
+    --teal:#17B890;
+    --orange:#FF8A3D;
+    --magenta:#F5487F;
+    --sky:#2F8FED;
+
+    --violet-tint:#F1EDFF;
+    --teal-tint:#E7FBF4;
+    --orange-tint:#FFF1E5;
+    --magenta-tint:#FFEAF1;
+    --sky-tint:#EAF3FE;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    line-height:1.1;
+    font-weight:600;
+  }
+
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  ::selection{background:var(--violet); color:#fff;}
+  :focus-visible{outline:2px solid var(--violet); outline-offset:3px;}
+
+  /* ---------- Nav ---------- */
+
+  .nav-wrap{
+    position:sticky; top:0; z-index:20;
+    background:rgba(251,249,255,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+
+  .nav{
+    max-width:1120px;
+    margin:0 auto;
+    padding:1.1rem 2rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+  }
+
+  .brand{
+    display:flex; align-items:center; gap:0.6rem;
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:1.15rem;
+  }
+
+  .brand .mark{
+    width:32px; height:32px;
+    border-radius:9px;
+    background:linear-gradient(135deg, var(--violet), var(--magenta));
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-weight:700; font-size:0.95rem;
+  }
+
+  .pills{
+    display:flex;
+    gap:0.4rem;
+    overflow-x:auto;
+  }
+
+  .pills a{
+    font-size:0.85rem;
+    font-weight:500;
+    padding:0.5rem 0.95rem;
+    border-radius:99px;
+    color:var(--muted);
+    white-space:nowrap;
+    transition:background .2s ease, color .2s ease;
+  }
+
+  .pills a.active{ color:#fff; }
+
+  /* ---------- Shell ---------- */
+
+  main{max-width:1120px; margin:0 auto; padding:0 2rem;}
+  section{padding:5.5rem 0; scroll-margin-top:5rem;}
+
+  .section-head{display:flex; align-items:center; gap:0.7rem; margin-bottom:2.2rem;}
+  .section-head .dot{width:11px; height:11px; border-radius:50%;}
+  .section-head h2{font-size:1.7rem; font-weight:600;}
+
+  /* ---------- reveal-on-scroll ---------- */
+
+  .reveal{
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  .reveal-stagger.in > *{ transition-delay:calc(var(--i, 0) * 90ms); }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .reveal{ opacity:1; transform:none; transition:none; }
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:3rem;
+    align-items:center;
+    padding-top:4.5rem;
+  }
+
+  .hero h1{
+    font-size:clamp(2.4rem, 4.6vw, 3.6rem);
+    font-weight:600;
+    min-height:2.4em;
+  }
+
+  .hero h1 .grad{
+    background:linear-gradient(100deg, var(--violet), var(--magenta) 55%, var(--orange));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+
+  .type-cursor{
+    display:inline-block;
+    width:3px;
+    background:var(--violet);
+    margin-left:2px;
+    animation:blink 1s step-end infinite;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
+  @media (prefers-reduced-motion: reduce){ .type-cursor{ animation:none; } }
+
+  .hero .lede{
+    margin-top:1.3rem;
+    max-width:52ch;
+    color:var(--muted);
+    font-size:1.08rem;
+  }
+
+  .chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.7rem;
+    margin-top:2rem;
+  }
+
+  .chip{
+    display:flex;
+    align-items:baseline;
+    gap:0.4rem;
+    padding:0.65rem 1.1rem;
+    border-radius:99px;
+    font-size:0.85rem;
+    font-weight:500;
+  }
+
+  .chip b{ font-family:'Fraunces', serif; font-size:1.15rem; font-weight:700; }
+
+  .chip.violet{ background:var(--violet-tint); color:var(--violet); }
+  .chip.teal{ background:var(--teal-tint); color:var(--teal); }
+  .chip.orange{ background:var(--orange-tint); color:#B85B12; }
+
+  /* hero visual */
+  .hero-visual{ position:relative; height:380px; }
+
+  .blob{
+    position:absolute;
+    border-radius:42% 58% 63% 37% / 41% 44% 56% 59%;
+  }
+
+  .blob-a{
+    width:280px; height:280px; top:10px; right:20px;
+    background:linear-gradient(135deg, var(--violet), var(--magenta));
+    animation:float-a 10s ease-in-out infinite;
+  }
+  .blob-b{
+    width:200px; height:200px; bottom:0; left:10px;
+    background:linear-gradient(135deg, var(--orange), var(--sky));
+    animation:float-b 12s ease-in-out infinite;
+  }
+  @keyframes float-a{ 0%,100%{ transform:translate(0,0) rotate(0deg); } 50%{ transform:translate(-10px,14px) rotate(8deg); } }
+  @keyframes float-b{ 0%,100%{ transform:translate(0,0) rotate(0deg); } 50%{ transform:translate(12px,-10px) rotate(-6deg); } }
+
+  .hero-visual svg{ position:absolute; inset:0; width:100%; height:100%; }
+
+  .pulse-line{
+    stroke-dasharray:400;
+    stroke-dashoffset:400;
+    animation:draw 2.2s ease forwards .3s;
+  }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+
+  @media (prefers-reduced-motion: reduce){
+    .blob-a, .blob-b{ animation:none; }
+    .pulse-line{ animation:none; stroke-dashoffset:0; }
+  }
+
+  /* ---------- Skills ---------- */
+
+  .skill-groups{ display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+  .skill-group h3{ font-family:'Inter'; font-size:0.82rem; font-weight:600; color:var(--teal); margin-bottom:1rem; }
+  .skill-list{ display:flex; flex-wrap:wrap; gap:0.6rem; }
+  .skill-list li{ list-style:none; padding:0.55rem 1rem; border-radius:10px; font-size:0.88rem; font-weight:500; }
+  .skill-list.tools li{ background:var(--teal-tint); color:#0E7A5D; }
+  .skill-list.tech li{ background:var(--violet-tint); color:#5B3FD6; }
+
+  /* ---------- Projects ---------- */
+
+  .project-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; }
+
+  .project-card{
+    background:var(--panel);
+    border-radius:20px;
+    border:1px solid var(--line);
+    overflow:hidden;
+    box-shadow:0 1px 2px rgba(26,23,48,0.04);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .project-card:hover{ transform:translateY(-5px); box-shadow:0 14px 28px rgba(26,23,48,0.1); }
+
+  .project-card .bar{ height:6px; }
+
+  .project-card .thumb{ aspect-ratio:16/10; overflow:hidden; background:var(--paper); position:relative; }
+  .project-card .thumb img{ width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .5s ease; }
+  .project-card:hover .thumb img{ transform:scale(1.04); }
+
+  .live-badge{
+    position:absolute; top:0.7rem; left:0.7rem;
+    display:flex; align-items:center; gap:0.4rem;
+    background:rgba(26,23,48,0.72);
+    color:#fff;
+    font-size:0.68rem;
+    font-weight:600;
+    padding:0.32rem 0.6rem 0.32rem 0.5rem;
+    border-radius:99px;
+    backdrop-filter:blur(3px);
+  }
+  .live-badge .dot{
+    width:6px; height:6px; border-radius:50%;
+    background:#3EE08A;
+    animation:blink-dot 1.6s ease-in-out infinite;
+  }
+  @keyframes blink-dot{ 0%,100%{ opacity:1; } 50%{ opacity:0.3; } }
+  @media (prefers-reduced-motion: reduce){ .live-badge .dot{ animation:none; } }
+
+  .project-body{ padding:1.1rem 1.4rem 0.4rem; }
+  .project-body h3{ font-size:1.1rem; margin-bottom:0.45rem; }
+  .project-body p{ color:var(--muted); font-size:0.9rem; }
+
+  .tool-row{ display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.85rem; }
+  .tool-row span{ font-size:0.72rem; font-weight:600; padding:0.25rem 0.6rem; border-radius:99px; }
+
+  /* mini chart */
+  .mini-chart{
+    display:flex; align-items:flex-end; gap:5px;
+    height:44px;
+    margin:1rem 1.4rem 0;
+    padding-top:0.6rem;
+    border-top:1px dashed var(--line);
+  }
+  .mini-chart .bar-el{
+    flex:1;
+    border-radius:3px 3px 0 0;
+    height:0%;
+    transition:height 1s cubic-bezier(.2,.8,.2,1);
+  }
+  .project-card.in .mini-chart .bar-el{ height:var(--h); }
+
+  .project-link{ display:block; margin:0.9rem 1.4rem 1.4rem; font-size:0.85rem; font-weight:600; }
+
+  .c-violet .bar{ background:var(--violet); } .c-violet .project-link{ color:var(--violet); } .c-violet .tool-row span{ background:var(--violet-tint); color:var(--violet); } .c-violet .bar-el{ background:var(--violet); }
+  .c-teal .bar{ background:var(--teal); } .c-teal .project-link{ color:var(--teal); } .c-teal .tool-row span{ background:var(--teal-tint); color:#0E7A5D; } .c-teal .bar-el{ background:var(--teal); }
+  .c-orange .bar{ background:var(--orange); } .c-orange .project-link{ color:#B85B12; } .c-orange .tool-row span{ background:var(--orange-tint); color:#B85B12; } .c-orange .bar-el{ background:var(--orange); }
+  .c-magenta .bar{ background:var(--magenta); } .c-magenta .project-link{ color:var(--magenta); } .c-magenta .tool-row span{ background:var(--magenta-tint); color:var(--magenta); } .c-magenta .bar-el{ background:var(--magenta); }
+  .c-sky .bar{ background:var(--sky); } .c-sky .project-link{ color:var(--sky); } .c-sky .tool-row span{ background:var(--sky-tint); color:var(--sky); } .c-sky .bar-el{ background:var(--sky); }
+
+  /* ---------- Certifications ---------- */
+
+  .cert-list{ display:flex; flex-direction:column; gap:0.9rem; }
+  .cert-list li{
+    list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem;
+    background:var(--panel); border:1px solid var(--line); border-left:5px solid var(--magenta);
+    border-radius:12px; padding:1.1rem 1.4rem;
+  }
+  .cert-list .name{ font-weight:500; font-size:0.98rem; }
+  .cert-list .tag{ font-size:0.75rem; color:var(--muted); white-space:nowrap; }
+
+  /* ---------- Contact ---------- */
+
+  .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; }
+  .panel{ background:var(--panel); border-radius:18px; border:1px solid var(--line); padding:1.8rem; }
+  .panel.sky{ border-top:5px solid var(--sky); }
+  .panel.violet{ border-top:5px solid var(--violet); }
+  .panel h3{ font-size:1.05rem; margin-bottom:0.9rem; }
+  .goal-text{ color:var(--muted); font-size:0.94rem; }
+  .learning-list li{ list-style:none; font-size:0.9rem; color:var(--muted); padding:0.4rem 0; border-bottom:1px dashed var(--line); }
+  .learning-list li:last-child{ border-bottom:none; }
+
+  footer{
+    margin-top:1rem; padding:2.5rem 0 3.5rem;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;
+    color:var(--muted); font-size:0.85rem; border-top:1px solid var(--line);
+  }
+  .footer-links{ display:flex; gap:1.3rem; }
+  .footer-links a:hover{ color:var(--violet); }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width:900px){
+    .hero{ grid-template-columns:1fr; }
+    .hero-visual{ height:260px; order:-1; }
+    .skill-groups, .project-grid, .two-col{ grid-template-columns:1fr; }
+    .nav{ padding:1rem 1.25rem; }
+    main{ padding:0 1.25rem; }
+    section{ padding:3.5rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <nav class="nav">
+    <div class="brand"><span class="mark">P</span> Priyadharshan</div>
+    <div class="pills" id="pills">
+      <a href="#overview" data-section="overview" data-color="#7C5CFC">Overview</a>
+      <a href="#skills" data-section="skills" data-color="#17B890">Skills</a>
+      <a href="#projects" data-section="projects" data-color="#FF8A3D">Projects</a>
+      <a href="#certifications" data-section="certifications" data-color="#F5487F">Certifications</a>
+      <a href="#contact" data-section="contact" data-color="#2F8FED">Contact</a>
+    </div>
+  </nav>
+</div>
+
+<main>
+
+  <section id="overview">
+    <div class="hero">
+      <div>
+        <h1 id="typed-headline"></h1>
+        <p class="lede">
+          Computer Science Engineering student focused on data analysis. Hands-on with
+          SQL, Excel, Python, Pandas and Power BI through projects and an internship —
+          cleaning messy data and building dashboards that hold up under real business
+          questions.
+        </p>
+        <div class="chips">
+          <div class="chip violet"><b data-count="5">0</b> projects built</div>
+          <div class="chip teal"><b data-count="5">0</b> core tools</div>
+          <div class="chip orange"><b data-count="3">0</b> certifications</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="blob blob-a"></div>
+        <div class="blob blob-b"></div>
+        <svg viewBox="0 0 300 300" fill="none">
+          <polyline class="pulse-line" points="60,220 100,150 150,190 200,110 245,140" stroke="#FFFFFF" stroke-width="2.5" opacity="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <g fill="#FFFFFF">
+            <circle cx="60" cy="220" r="5"/>
+            <circle cx="100" cy="150" r="5"/>
+            <circle cx="150" cy="190" r="5"/>
+            <circle cx="200" cy="110" r="5"/>
+            <circle cx="245" cy="140" r="5"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="reveal">
+    <div class="section-head"><span class="dot" style="background:var(--teal)"></span><h2>Skills</h2></div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h3>TOOLS</h3>
+        <ul class="skill-list tools">
+          <li>SQL</li><li>Microsoft Excel</li><li>Python</li><li>Pandas</li><li>Power BI</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>TECHNIQUES</h3>
+        <ul class="skill-list tech">
+          <li>Data Cleaning</li><li>Data Analysis</li><li>Data Visualization</li><li>Exploratory Data Analysis</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-head reveal"><span class="dot" style="background:var(--orange)"></span><h2>Projects</h2></div>
+    <div class="project-grid reveal-stagger">
+
+      <article class="project-card reveal c-violet" style="--i:0">
+        <div class="bar"></div>
+        <div class="thumb">
+          <div class="live-badge"><span class="dot"></span>Dashboard</div>
+          <img src="https://raw.githubusercontent.com/Priyan1309/data-analyst-portfolio/main/sales%20perfomance%20analysis.png" alt="Sales performance analysis dashboard" loading="lazy">
+        </div>
+        <div class="project-body">
+          <h3>Sales Performance Analysis</h3>
+          <p>Analyzed sales data to identify revenue trends, product performance, category performance and monthly sales patterns.</p>
+          <div class="tool-row"><span>Python</span><span>Pandas</span><span>Excel</span><span>Power BI</span></div>
+        </div>
+        <div class="mini-chart">
+          <div class="bar-el" style="--h:55%"></div><div class="bar-el" style="--h:70%"></div><div class="bar-el" style="--h:40%"></div><div class="bar-el" style="--h:85%"></div><div class="bar-el" style="--h:60%"></div><div class="bar-el" style="--h:95%"></div>
+        </div>
+        <a class="project-link" href="https://github.com/Priyan1309/data-analyst-portfolio/blob/main/PROJECT%204%20SALES%20PERFOMANCE%20ANALYSIS%20DASHBOARD.pbix" target="_blank" rel="noopener">Open dashboard file</a>
+      </article>
+
+      <article class="project-card reveal c-teal" style="--i:1">
+        <div class="bar"></div>
+        <div class="thumb">
+          <div class="live-badge"><span class="dot"></span>Dashboard</div>
+          <img src="https://raw.githubusercontent.com/Priyan1309/data-analyst-portfolio/main/customer%20analysis%20dashboard.png" alt="Customer analysis dashboard" loading="lazy">
+        </div>
+        <div class="project-body">
+          <h3>Customer Analysis</h3>
+          <p>Analyzed customer demographics, purchasing behavior, spending patterns and high-value customers to surface useful business insights.</p>
+          <div class="tool-row"><span>Python</span><span>Pandas</span><span>Excel</span></div>
+        </div>
+        <div class="mini-chart">
+          <div class="bar-el" style="--h:40%"></div><div class="bar-el" style="--h:65%"></div><div class="bar-el" style="--h:50%"></div><div class="bar-el" style="--h:80%"></div><div class="bar-el" style="--h:35%"></div><div class="bar-el" style="--h:70%"></div>
+        </div>
+        <a class="project-link" href="https://github.com/Priyan1309/data-analyst-portfolio/blob/main/PROJECT%202%20CUSTOMER%20ANALYSIS.pbix" target="_blank" rel="noopener">Open dashboard file</a>
+      </article>
+
+      <article class="project-card reveal c-orange" style="--i:2">
+        <div class="bar"></div>
+        <div class="thumb">
+          <div class="live-badge"><span class="dot"></span>Dashboard</div>
+          <img src="https://raw.githubusercontent.com/Priyan1309/data-analyst-portfolio/main/sales%20data.png" alt="Sales data exploratory analysis" loading="lazy">
+        </div>
+        <div class="project-body">
+          <h3>Sales Data Analysis</h3>
+          <p>Performed exploratory analysis of sales data to understand sales trends, revenue and product performance.</p>
+          <div class="tool-row"><span>Python</span><span>Pandas</span><span>Excel</span><span>Power BI</span></div>
+        </div>
+        <div class="mini-chart">
+          <div class="bar-el" style="--h:60%"></div><div class="bar-el" style="--h:45%"></div><div class="bar-el" style="--h:90%"></div><div class="bar-el" style="--h:55%"></div><div class="bar-el" style="--h:75%"></div><div class="bar-el" style="--h:50%"></div>
+        </div>
+        <a class="project-link" href="https://github.com/Priyan1309/data-analyst-portfolio/blob/main/project%201%20sales%20data%20dashboard.pbix" target="_blank" rel="noopener">Open dashboard file</a>
+      </article>
+
+      <article class="project-card reveal c-magenta" style="--i:3">
+        <div class="bar"></div>
+        <div class="thumb">
+          <div class="live-badge"><span class="dot"></span>Dashboard</div>
+          <img src="https://raw.githubusercontent.com/Priyan1309/data-analyst-portfolio/main/sales%20and%20profit%20analysis%20dashboard.png" alt="Sales and profit analysis dashboard" loading="lazy">
+        </div>
+        <div class="project-body">
+          <h3>Sales and Profit Analysis</h3>
+          <p>Built an interactive Power BI dashboard to analyze sales, profit, products and overall business performance.</p>
+          <div class="tool-row"><span>Power BI</span><span>Excel</span></div>
+        </div>
+        <div class="mini-chart">
+          <div class="bar-el" style="--h:70%"></div><div class="bar-el" style="--h:50%"></div><div class="bar-el" style="--h:65%"></div><div class="bar-el" style="--h:85%"></div><div class="bar-el" style="--h:40%"></div><div class="bar-el" style="--h:60%"></div>
+        </div>
+        <a class="project-link" href="https://github.com/Priyan1309/data-analyst-portfolio/blob/main/project%203%20Sales%20%20analysis%20dashboard.pbix" target="_blank" rel="noopener">Open dashboard file</a>
+      </article>
+
+      <article class="project-card reveal c-sky" style="--i:4">
+        <div class="bar"></div>
+        <div class="thumb">
+          <div class="live-badge"><span class="dot"></span>Dashboard</div>
+          <img src="https://raw.githubusercontent.com/Priyan1309/data-analyst-portfolio/main/CUSTOMER%20CHURN.png" alt="Customer churn analysis dashboard" loading="lazy">
+        </div>
+        <div class="project-body">
+          <h3>Customer Churn Analysis</h3>
+          <p>Analyzed customer data to identify churn patterns and understand the factors affecting customer retention.</p>
+          <div class="tool-row"><span>Python</span><span>Pandas</span><span>Excel</span><span>Power BI</span></div>
+        </div>
+        <div class="mini-chart">
+          <div class="bar-el" style="--h:80%"></div><div class="bar-el" style="--h:35%"></div><div class="bar-el" style="--h:55%"></div><div class="bar-el" style="--h:45%"></div><div class="bar-el" style="--h:95%"></div><div class="bar-el" style="--h:65%"></div>
+        </div>
+        <a class="project-link" href="https://github.com/Priyan1309/data-analyst-portfolio/blob/main/PROJECT%205%20CUSTOMER%20CHURN%20ANALYSIS.pbix" target="_blank" rel="noopener">Open dashboard file</a>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="certifications" class="reveal">
+    <div class="section-head"><span class="dot" style="background:var(--magenta)"></span><h2>Certifications</h2></div>
+    <ul class="cert-list">
+      <li><span class="name">Data Analysis Internship</span><span class="tag">Internship</span></li>
+      <li><span class="name">IBM SkillsBuild — AI Fundamentals: Foundations for Understanding AI</span><span class="tag">IBM SkillsBuild</span></li>
+      <li><span class="name">IBM SkillsBuild — Lifelong Professional Skills</span><span class="tag">IBM SkillsBuild</span></li>
+    </ul>
+  </section>
+
+  <section id="contact" class="reveal">
+    <div class="section-head"><span class="dot" style="background:var(--sky)"></span><h2>Contact</h2></div>
+    <div class="two-col">
+      <div class="panel sky">
+        <h3>Career goal</h3>
+        <p class="goal-text">Seeking an entry-level Data Analyst role where I can apply my analytical
+        skills, learn from experienced professionals and contribute to data-driven
+        decision making.</p>
+      </div>
+      <div class="panel violet">
+        <h3>Currently learning</h3>
+        <ul class="learning-list">
+          <li>Advanced SQL</li>
+          <li>Power BI</li>
+          <li>Data Visualization</li>
+          <li>Tableau</li>
+          <li>Python for Data Analysis</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Priyadharshan — Data Analyst Portfolio</span>
+    <div class="footer-links">
+      <a href="https://github.com/Priyan1309" target="_blank" rel="noopener">GitHub</a>
+      <a href="#" title="Add your LinkedIn profile URL here">LinkedIn</a>
+      <a href="mailto:youremail@example.com">Email</a>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- nav scroll-spy --- */
+  const sections = document.querySelectorAll('main section[id]');
+  const pills = document.querySelectorAll('#pills a');
+
+  function setActive(id, color){
+    pills.forEach(p => {
+      if(p.dataset.section === id){ p.classList.add('active'); p.style.background = color; }
+      else { p.classList.remove('active'); p.style.background = 'transparent'; }
+    });
+  }
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const id = entry.target.getAttribute('id');
+        const link = document.querySelector(`#pills a[data-section="${id}"]`);
+        if(link) setActive(id, link.dataset.color);
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+  sections.forEach(sec => navObserver.observe(sec));
+
+  /* --- typing effect --- */
+  const headlineEl = document.getElementById('typed-headline');
+  const headlineText = "I chase the story hiding inside every spreadsheet.";
+  const gradStart = "story hiding";
+
+  function renderHeadline(fullLength){
+    const shown = headlineText.slice(0, fullLength);
+    const gStart = headlineText.indexOf(gradStart);
+    const gEnd = gStart + gradStart.length;
+    let html = '';
+    for(let i = 0; i < shown.length; i++){
+      if(i === gStart) html += '<span class="grad">';
+      html += shown[i];
+      if(i === gEnd - 1) html += '</span>';
+    }
+    if(shown.length > gStart && shown.length <= gEnd) html += '</span>';
+    headlineEl.innerHTML = html + '<span class="type-cursor">&nbsp;</span>';
+  }
+
+  if(reduceMotion){
+    renderHeadline(headlineText.length);
+  } else {
+    let i = 0;
+    (function typeStep(){
+      renderHeadline(i);
+      i++;
+      if(i <= headlineText.length){ setTimeout(typeStep, 28); }
+      else { headlineEl.querySelector('.type-cursor')?.remove(); }
+    })();
+  }
+
+  /* --- animated counters --- */
+  const counters = document.querySelectorAll('[data-count]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        if(reduceMotion){ el.textContent = target; counterObserver.unobserve(el); return; }
+        const start = performance.now();
+        const duration = 900;
+        function step(now){
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(eased * target);
+          if(p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.6 });
+  counters.forEach(c => counterObserver.observe(c));
+
+  /* --- reveal on scroll --- */
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  /* --- project card mini-chart trigger (separate class toggle) --- */
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        cardObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.project-card').forEach(c => cardObserver.observe(c));
+</script>
+
+</body>
+</html>
