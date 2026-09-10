@@ -1,85 +1,86 @@
-# Hi, I'm Priyadharshan 👋
+# 🎬 Netflix Data Analysis & Visualization
 
-## 📊 Aspiring Data Analyst
+## 📌 Project Overview
 
-I am a motivated Computer Science Engineering student passionate about data analysis and turning data into meaningful business insights.
+This project explores the Netflix titles dataset to identify patterns and trends across movies and TV shows.
 
-I have hands-on experience working with SQL, Excel, Python, Pandas, and Power BI through projects and internship experience.
+The analysis focuses on content distribution, countries, ratings, and other important characteristics of Netflix's content library.
 
-## 🛠️ Technical Skills
+## 🎯 Objectives
 
-- SQL
-- Microsoft Excel
+- Analyze the distribution of Movies and TV Shows
+- Explore Netflix content by country
+- Analyze content ratings
+- Clean and preprocess the dataset
+- Identify useful patterns and trends
+- Create visualizations to communicate insights
+
+## 🛠️ Technologies Used
+
 - Python
 - Pandas
-- Power BI
+- Matplotlib
 - Data Cleaning
-- Data Analysis
-- Data Visualization
 - Exploratory Data Analysis (EDA)
 
-## 📁 Projects
+## 📂 Dataset
 
-### 1. Sales Performance Analysis
+The project uses the `netflix_titles.csv` dataset containing information about Netflix movies and TV shows.
 
-Analyzed sales data to identify revenue trends, product performance, category performance, and monthly sales patterns.
+Key columns include:
 
-**Tools:** Python, Pandas, Excel, Power BI
+- Title
+- Type
+- Director
+- Cast
+- Country
+- Date Added
+- Release Year
+- Rating
+- Duration
+- Listed In
 
-![Sales Performance Dashboard](sales%20performance%20analysis.png)
+## 🧹 Data Cleaning
 
-### 2. Customer Analysis
+The dataset was cleaned using Python and Pandas.
 
-Analyzed customer demographics, purchasing behavior, spending patterns, and high-value customers to identify useful business insights.
+The following steps were performed:
 
-**Tools:** Python, Pandas, Excel
+- Handled missing values
+- Replaced missing values in important columns with `Unknown`
+- Converted the `date_added` column into a date format
+- Prepared the dataset for analysis
 
-![Customer Analysis Dashboard](customer%20analysis%20dashboard.png)
+## 📊 Analysis Performed
 
-### 3. Sales Data Analysis
+### 1. Movies vs TV Shows
+Analyzed the number of Movies and TV Shows available in the dataset.
 
-Performed exploratory analysis of sales data to understand sales trends, revenue, and product performance.
+### 2. Countries
+Analyzed the countries represented in the Netflix dataset.
 
-**Tools:** Python, Pandas, Excel, Power BI
+### 3. Ratings
+Explored the different content ratings available on Netflix.
 
-![Sales Data Analysis](sales%20data.png)
+### 4. Content Trends
+Used data analysis and visualizations to identify patterns in Netflix's content library.
 
-### 4. Sales and Profit Analysis
+## 📈 Key Results
 
-Built an interactive Power BI dashboard to analyze sales, profit, products, and business performance.
+- Total titles analyzed: **8,807**
+- Unique countries represented: **749**
+- Unique ratings identified: **18**
 
-**Tools:** Power BI, Excel
+## 📁 Project Structure
 
-![Sales and Profit Analysis Dashboard](sales%20and%20profit%20analysis%20dashboard.png)
-
-### 5. Customer Churn Analysis
-
-Analyzed customer data to identify churn patterns and understand factors affecting customer retention.
-
-**Tools:** Python, Pandas, Excel, Power BI
-
-![Customer Churn Analysis](CUSTOMER%20CHURN.png)
-
-
-## 📜 Certifications
-
-- Data Analysis Internship
-- IBM SkillsBuild – AI Fundamentals: Foundations for Understanding AI
-- IBM SkillsBuild – Lifelong Professional Skills
-
-## 🎯 Career Goal
-
-Seeking an entry-level Data Analyst opportunity where I can apply my analytical skills, learn from experienced professionals, and contribute to data-driven decision making.
-
-## 📚 Currently Learning
-
-- Advanced SQL
-- Power BI
-- Data Visualization
-- Tableau
-- Python for Data Analysis
-
-## 🔗 Connect With Me
-
-- LinkedIn: Add your LinkedIn profile link here
-
+```text
+Netflix-Data-Analysis/
+│
+├── chart/
+│   ├── chart1
+│   ├── chart2
+│   └── chart3
+│
+├── netflix_analysis.py
+├── netflix_titles.csv
+└── README.md
