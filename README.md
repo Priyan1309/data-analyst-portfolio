@@ -1,86 +1,222 @@
-# 🎬 Netflix Data Analysis & Visualization
+# 👋 Hi, I'm Priyadharshan.T
 
-## 📌 Project Overview
+## 📊 Aspiring Data Analyst | Python | SQL | Excel | Power BI
 
-This project explores the Netflix titles dataset to identify patterns and trends across movies and TV shows.
+🎓 Final-year B.E. Computer Science Engineering student passionate about Data Analytics, Business Intelligence, and turning raw data into meaningful insights.
 
-The analysis focuses on content distribution, countries, ratings, and other important characteristics of Netflix's content library.
+I enjoy working with data to discover patterns, understand trends, build dashboards, and communicate insights through clear visualizations.
 
-## 🎯 Objectives
+---
 
-- Analyze the distribution of Movies and TV Shows
-- Explore Netflix content by country
-- Analyze content ratings
-- Clean and preprocess the dataset
-- Identify useful patterns and trends
-- Create visualizations to communicate insights
+## 🚀 About Me
 
-## 🛠️ Technologies Used
+- 🎓 Pursuing **B.E. Computer Science Engineering**
+- 📊 Aspiring **Data Analyst**
+- 💻 Hands-on experience with **Python, SQL, Excel, Pandas, and Power BI**
+- 📈 Interested in **Data Analytics & Business Intelligence**
+- 🧹 Interested in data cleaning, analysis, visualization, and reporting
+- 🌱 Continuously learning and building real-world projects
+- 🎯 Career goal: Start my career as a Data Analyst and grow into a strong data professional
 
+---
+
+# 🛠️ Skills
+
+### 💻 Programming & Data Analysis
 - Python
 - Pandas
-- Matplotlib
 - Data Cleaning
+- Data Transformation
 - Exploratory Data Analysis (EDA)
 
-## 📂 Dataset
+### 🗄️ Database
+- SQL
+- Data Filtering
+- Aggregations
+- GROUP BY
+- JOINs
+- Subqueries
 
-The project uses the `netflix_titles.csv` dataset containing information about Netflix movies and TV shows.
+### 📊 Data Visualization & BI
+- Power BI
+- Dashboard Development
+- Data Visualization
+- Charts & KPIs
+- Business Insights
 
-Key columns include:
+### 📑 Spreadsheet
+- Microsoft Excel
+- Pivot Tables
+- Data Cleaning
+- Formulas
+- Data Analysis
+
+### 🔧 Tools
+- Visual Studio Code
+- Git
+- GitHub
+- Jupyter Notebook
+
+---
+
+# 📁 Featured Projects
+
+## 1️⃣ Sales Performance Dashboard
+
+📊 Analyzed sales data to understand revenue performance, product trends, and business performance.
+
+### 🔍 Key Work
+- Cleaned and prepared sales data
+- Analyzed sales and revenue trends
+- Compared product performance
+- Created interactive Power BI visualizations
+- Identified useful business insights
+
+### 🛠️ Tools
+`Power BI` `Excel` `Data Analysis`
+
+---
+
+## 2️⃣ Customer Analysis Dashboard
+
+👥 Analyzed customer demographics and purchasing behavior to understand customer patterns and spending.
+
+### 🔍 Key Work
+- Analyzed customer demographics
+- Compared male and female customers
+- Analyzed city-wise customer distribution
+- Calculated total and average spending
+- Identified high-value customers
+- Created interactive Power BI visuals
+
+### 📌 Insights
+- Compared customer distribution by gender
+- Analyzed customer spending patterns
+- Identified high-value purchases
+- Compared customer activity across cities
+
+### 🛠️ Tools
+`Excel` `Power BI` `Data Analysis`
+
+---
+
+## 3️⃣ Sales & Profit Analysis Dashboard
+
+💰 Built a Power BI dashboard to analyze sales, costs, profit, and profit margins.
+
+### 🔍 Key Work
+- Analyzed product and category performance
+- Compared regional sales
+- Calculated profit
+- Analyzed profit margins
+- Created interactive dashboards
+- Used KPIs and charts to communicate insights
+
+### 🛠️ Tools
+`Power BI` `Data Analysis`
+
+---
+
+## 4️⃣ Sales Performance Analysis
+
+📈 Developed a business-focused sales analysis dashboard to identify important sales trends and performance patterns.
+
+### 🔍 Key Work
+- Analyzed sales performance
+- Compared categories and regions
+- Studied revenue patterns
+- Created interactive visualizations
+- Presented insights through a Power BI dashboard
+
+### 🛠️ Tools
+`Power BI` `Excel` `Data Analysis`
+
+---
+
+## 5️⃣ Customer Churn Analysis
+
+📉 Analyzed customer churn data to understand customer retention and identify patterns associated with churn.
+
+### 🔍 Key Work
+- Cleaned customer churn data
+- Analyzed churn distribution
+- Compared customer groups
+- Identified churn patterns
+- Created visualizations
+- Built a Power BI dashboard
+
+### 🛠️ Tools
+`Python` `Pandas` `Excel` `Power BI`
+
+---
+
+## 6️⃣ Netflix Data Analysis & Visualization
+
+🎬 Analyzed the Netflix titles dataset to discover patterns and trends across Movies and TV Shows.
+
+### 🔍 Key Work
+- Cleaned and preprocessed the dataset
+- Compared Movies vs TV Shows
+- Analyzed Netflix content by country
+- Studied content ratings
+- Explored content distribution
+- Identified useful patterns and trends
+- Created data visualizations using Python
+
+### 📊 Dataset
+Netflix titles dataset containing information about movies and TV shows, including:
 
 - Title
 - Type
 - Director
 - Cast
 - Country
+- Rating
 - Date Added
 - Release Year
-- Rating
 - Duration
-- Listed In
+- Genre
 
-## 🧹 Data Cleaning
+### 🛠️ Tools
+`Python` `Pandas` `Matplotlib` `Data Cleaning`
 
-The dataset was cleaned using Python and Pandas.
+---
 
-The following steps were performed:
+# 🏆 Certifications & Learning
 
-- Handled missing values
-- Replaced missing values in important columns with `Unknown`
-- Converted the `date_added` column into a date format
-- Prepared the dataset for analysis
+### 🤖 IBM SkillsBuild
 
-## 📊 Analysis Performed
+**AI Fundamentals: Foundations for Understanding AI**  
+Issued by **IBM SkillsBuild**
 
-### 1. Movies vs TV Shows
-Analyzed the number of Movies and TV Shows available in the dataset.
+Learned fundamental concepts of Artificial Intelligence, including AI applications, machine learning concepts, predictive AI, and responsible AI.
 
-### 2. Countries
-Analyzed the countries represented in the Netflix dataset.
+---
 
-### 3. Ratings
-Explored the different content ratings available on Netflix.
+### 💼 IBM SkillsBuild
 
-### 4. Content Trends
-Used data analysis and visualizations to identify patterns in Netflix's content library.
+**Lifelong Professional Skills**  
+Issued by **IBM SkillsBuild**
 
-## 📈 Key Results
+Developed professional skills related to communication, workplace effectiveness, collaboration, and career development.
 
-- Total titles analyzed: **8,807**
-- Unique countries represented: **749**
-- Unique ratings identified: **18**
+---
 
-## 📁 Project Structure
+# 📊 Data Analytics Journey
+
+My learning journey focuses on developing practical skills across the complete data-analysis workflow:
 
 ```text
-Netflix-Data-Analysis/
-│
-├── chart/
-│   ├── chart1
-│   ├── chart2
-│   └── chart3
-│
-├── netflix_analysis.py
-├── netflix_titles.csv
-└── README.md
+Raw Data
+    ↓
+Data Cleaning
+    ↓
+Data Transformation
+    ↓
+Exploratory Data Analysis
+    ↓
+Data Visualization
+    ↓
+Dashboard Development
+    ↓
+Business Insights
